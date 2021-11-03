@@ -1,0 +1,28 @@
+<h1 class=main-title>Books</h1>
+<table>
+  <tr>
+    <th>taitle</th>
+    <th>body</th>
+  </tr>
+
+    <% @books.each do |book| %>
+    <tr>
+      <td><%=  book.title %></td>
+      <td><%=  book.body %></td>
+      <td><%= link_to 'Show',book_path(book[:id])%></td>
+      <td><%= link_to 'Edit',edit_book_path(book[:id])%></td>
+      <td><a href="books/Destroy">Destroy</td>
+    </tr>
+    <% end %>
+
+</table>
+
+<h2>New Book</h2>
+<%= form_with model:@book, local:true do |f| %>
+  <h3 class="new-title">Title</h3>
+    <%= f.text_field:title %>
+  <h3 class="new-title">Body</h3>
+    <%= f.text_area:body %>
+    <%= f.submit'Create Book', class:'btn-new' %>
+  <!--<input class=btn-new type="submit" value="Create Book">-->
+<% end %>
