@@ -1,7 +1,7 @@
 <div class="sohw-row">
-<% if flash[:notice] %>
-  <p class="book-send"><%= flash[:notice] %></p>
-<% end %>
+  <% if flash[:notice] %>
+    <p class="book-send"><%= flash[:notice] %></p>
+  <% end %>
   <h3 class="show-title">Title:</h3>
   <span><%= @book.title %></span>
 </div>
