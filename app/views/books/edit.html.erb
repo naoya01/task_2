@@ -1,4 +1,7 @@
 <h2>Editing Book</h2>
+<% if flash[:notice] %>
+  <p class="book-send"><%= flash[:notice] %></p>
+<% end %>
 <%= form_with model:@book,url:"/books/#{@book.id}",local:true do |f| %>
 <h3 class="edit-title">Title</h3>
   <%= f.text_field:title %>
@@ -6,3 +9,6 @@
   <%= f.text_area:body %>
   <%= f.submit'Update Book',class:"btn-edit" %>
 <% end %>
+<td><%= link_to 'Show',book_path %></td>
+<span>|</span>
+<td><%= link_to 'Back',books_path %></td>

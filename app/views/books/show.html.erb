@@ -1,4 +1,7 @@
 <div class="sohw-row">
+<% if flash[:notice] %>
+  <p class="book-send"><%= flash[:notice] %></p>
+<% end %>
   <h3 class="show-title">Title:</h3>
   <span><%= @book.title %></span>
 </div>
@@ -8,4 +11,5 @@
 </div>
 
 <td><%= link_to 'Edit',edit_book_path %></td>
-<td><%= link_to 'Back',:back %></td>
+<span>|</span>
+<td><%= link_to 'Back',books_path %></td>
